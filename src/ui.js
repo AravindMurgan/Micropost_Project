@@ -74,6 +74,30 @@ class UI{
         this.titleInput.value = data.title;
         this.postBody.value = data.body;
         this.idInput = data.id;
+
+        this.changeFormState('edit');
+
+    }
+
+    changeFormState(type){
+
+        if(type === 'edit'){
+            ///Update Button
+            this.postSubmit.textContent = 'Update Post';
+            this.postSubmit.className = 'post-submit btn btn-warning btn-block';
+            ///Cancel button//
+            const button = document.createElement('button');
+            button.className = 'cancel btn btn-light btn-block';
+            button.appendChild(document.createTextNode('Cancel Post'));
+
+            //parent and dup element for Insert//
+            const cardform = document.querySelector('.card-form');
+            const formend=document.querySelector('.form-end');
+            //Insert button..
+            cardform.insertBefore(button,formend);
+
+
+        }
     }
 }
 
