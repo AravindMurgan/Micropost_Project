@@ -3,32 +3,12 @@
     {
       "id": 1,
       "title": "Post One",
-      "body": "This is post One"
-    },
-    {
-      "title": "Post Two",
-      "body": "This is Post Two",
-      "id": 2
+      "body": "This is post one"
     },
     {
       "title": "Post Three",
-      "body": "This is post Three",
+      "body": "This is post three",
       "id": 3
-    },
-    {
-      "title": "Aravind - Microsoft Front End Developer",
-      "body": "Hi iam Aravind , i work in Microsoft as a Front End developer, if u have questions or queries regarding Microsoft please let me know, I would love to help :)",
-      "id": 4
-    },
-    {
-      "title": "Aravind - Microsoft Front End Developer",
-      "body": "Hi iam Aravind , i work in Microsoft as a Front End developer, if u have questions or queries regarding Microsoft please let me know, I would love to help :)",
-      "id": 5
-    },
-    {
-      "title": "Aravind - Microsoft Front End Developer",
-      "body": "\nHi iam Aravind , i work in Microsoft as a Front End developer, if u have questions or queries regarding Microsoft please let me know, I would love to help :)",
-      "id": 6
     }
   ]
 }
