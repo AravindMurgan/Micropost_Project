@@ -15,7 +15,7 @@ class UI{
             console.log(post)
             output += `
                 <div class="card mb-3">
-                    <div class="card-body>
+                    <div class="card-body">
                     <h2 class="card-title">${post.title}</h2>
                     <p class="card-text">${post.body}</p>
                     <a href="#" class="edit card-link" data-id="${post.id}">
@@ -65,6 +65,15 @@ class UI{
         if(currentAlert){
             currentAlert.remove();
         }
+    }
+
+    //fillForm
+
+    fillForm(data){
+
+        this.titleInput.value = data.title;
+        this.postBody.value = data.body;
+        this.idInput = data.id;
     }
 }
 

@@ -7,6 +7,8 @@ import {ui} from './ui';
     document.querySelector('.post-submit').addEventListener('click',submitPost);
     //delete post//
     document.querySelector('#posts').addEventListener('click',deletePost);
+    //edit post///
+    document.querySelector('#posts').addEventListener('click',editPost);
 
  
 //get Post from API
@@ -55,6 +57,25 @@ function deletePost(e){
             });
     }
    }
+}
+
+//editpostt///
+function editPost(e){
+    if (e.target.parentElement.classList.contains('edit')){
+       
+        const id = e.target.parentElement.dataset.id;
+        const body = e.target.parentElement.previousElementSibling.textContent;
+        const title = e.target.parentElement.previousElementSibling.previousElementSibling.textContent;
+        console.log(title);
+
+        const data = {
+            id,
+            body,
+            title
+        }
+
+        ui.fillForm(data);
+    }
 }
   
 
