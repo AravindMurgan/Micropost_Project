@@ -59,6 +59,10 @@ class UI{
 
     }
 
+    clearInputID(){
+        this.idInput = '';
+    }
+
     clearAlert(){
         const currentAlert = document.querySelector('.alert');
 
@@ -87,7 +91,7 @@ class UI{
             this.postSubmit.className = 'post-submit btn btn-warning btn-block';
             ///Cancel button//
             const button = document.createElement('button');
-            button.className = 'cancel btn btn-light btn-block';
+            button.className = 'cancel-submit btn btn-light btn-block';
             button.appendChild(document.createTextNode('Cancel Post'));
 
             //parent and dup element for Insert//
@@ -95,7 +99,19 @@ class UI{
             const formend=document.querySelector('.form-end');
             //Insert button..
             cardform.insertBefore(button,formend);
-
+        }else{
+            ///Post it Button//
+            this.postSubmit.textContent = 'Post It';
+            this.postSubmit.className = 'post-submit btn btn-primary btn-block';
+            //remove Cancel button//
+            if(document.querySelector('.cancel-submit')){
+                document.querySelector('.cancel-submit').remove();
+            }
+            //clear fields//
+            this.clearFields();
+            //clear ID///
+            this.clearInputID();
+            
 
         }
     }

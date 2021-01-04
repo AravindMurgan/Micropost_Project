@@ -9,6 +9,8 @@ import {ui} from './ui';
     document.querySelector('#posts').addEventListener('click',deletePost);
     //edit post///
     document.querySelector('#posts').addEventListener('click',editPost);
+    //cancel post//
+    document.querySelector('.card-form').addEventListener('click',cancelPost);
 
  
 //get Post from API
@@ -17,6 +19,10 @@ function getPosts(){
     .then(data=>ui.showPosts(data))
     .catch(error=>console.log(error))
 }
+function cancelPost(e){
+    if(e.target.classList.contains('cancel-submit'));
+    ui.changeFormState('add');
+}
 
 //Submit Input Post
 function submitPost(e){
@@ -24,6 +30,11 @@ function submitPost(e){
     const title = document.querySelector('#title').value;
     const body = document.querySelector('#body').value;
     
+    //Form Validation//
+    if(title === '' || body === ''){
+        ui.showAlert('Please Enter the fields','alert alert-danger');
+    }else{
+        
     //Input data
     const data = {
         title,
@@ -38,6 +49,8 @@ function submitPost(e){
         })
         .catch(err=>console.log(err));
 
+    }
+    
 
 }
 
@@ -76,6 +89,8 @@ function editPost(e){
 
         ui.fillForm(data);
     }
+
+ 
 }
   
 
